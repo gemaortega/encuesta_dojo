@@ -17,8 +17,8 @@ def checkout():
     
     return redirect('/results')
 
-    @app.route('/results')
-    def data():
-        print(session)
-        return render_template( 'results.html', name=session['name'], city=session['city'], languaje=session['languaje'], comments=session['comments'])
+@app.route('/results')
+def data():
+    print(session)
+    return render_template( 'results.html', name=session['name'], city=session['city'], language=session['language'], comments=session['comment'])
 
