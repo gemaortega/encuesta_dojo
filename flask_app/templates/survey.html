@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Survey Dojo</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+  <link rel="stylesheet" type="text/javascript" href="{{ url_for('static', filename='js/jquery.min.js') }}">
+  <link rel="stylesheet" type="text/javascript" href="{{ url_for('static', filename='js/bootstrap.min.js') }}">
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
+
+<body >
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Survey Dojo</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/ninjas">Result</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid bg-3">
+    <div class="card">
+      <div class="card-body"style="width: 25rem; background-color: grey">
+    <h3 class="text-success">Survey Dojo</h3><br>
+      <form action="/process" method="POST">
+          <div class="form-group">
+            <div class="mb-3">
+              <label for="disabledTextInput" class="form_label">Your Name</label>
+              <input type="text" class="form-control" id="disabledTextInput" name="name" placeholder="write your name here">
+          </div> 
+            </div>
+          <div class="form-group"></div>
+            <div class="mb-3">
+              <label for="disableSelect" class="form-label">Dojo Location</label>
+              <select class="form-select" name="city" id="disableSelect">
+                <option>--Select a Dojo--</option>
+                <option>New York</option>
+                <option>San Francisco</option>
+                <option>Berlin</option>
+                <option>Tokio</option>
+                <option>Kioto</option>
+                <option>Londres</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-group"></div>
+            <div class="mb-3">
+            <label for="disableSelect" class="form-label">Language</label>
+            <select class="form-select" name="language" id="disableSelect">
+                <option>--Select a Language--</option>
+                <option>Python</option>
+                <option>C++</option>
+                <option>PHP</option>
+                <option>SQL</option>
+                <option>Javascript</option>
+                <option>C</option>
+                </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="mb-3">
+              <label for="exampleFormControlTextarea1" class="form-label">Comment</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="comment"></textarea>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+  </div><br>
+
+  <footer class="container-fluid text-center">
+    <p>Survey Dojo</p>
+  </footer>
+
+</body>
+
+</html>
